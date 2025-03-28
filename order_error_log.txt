@@ -1,0 +1,304 @@
+[2025-03-28 15:50:55] POST Data: Array
+(
+    [shipping_address_id] => 1
+    [new_full_name] => 
+    [new_street_address] => 
+    [new_city] => 
+    [new_state] => 
+    [new_postal_code] => 
+    [new_country] => 
+    [new_phone] => 
+    [payment_method] => credit_card
+)
+
+[2025-03-28 15:50:55] Cart Items: Array
+(
+    [0] => Array
+        (
+            [cart_id] => 23
+            [product_id] => 5
+            [price] => 213.00
+            [quantity] => 1
+            [product_colorway_id] => 15
+        )
+
+)
+
+[2025-03-28 15:50:55] Subtotal: 213, Shipping: 500, Tax: 10.65, Total: 723.65
+[2025-03-28 15:50:55] Exception occurred: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'subtotal' in 'field list'
+[2025-03-28 15:55:18] POST Data: Array
+(
+    [shipping_address_id] => 1
+    [new_full_name] => 
+    [new_street_address] => 
+    [new_city] => 
+    [new_state] => 
+    [new_postal_code] => 
+    [new_country] => 
+    [new_phone] => 
+    [payment_method] => credit_card
+)
+
+[2025-03-28 15:55:18] Cart Items: Array
+(
+    [0] => Array
+        (
+            [cart_id] => 23
+            [product_id] => 5
+            [price] => 213.00
+            [quantity] => 1
+            [product_colorway_id] => 15
+        )
+
+)
+
+[2025-03-28 15:55:18] Subtotal: 213, Shipping: 500, Tax: 10.65, Total: 723.65
+[2025-03-28 15:55:18] Order created with ID: 5
+[2025-03-28 15:55:18] Order items inserted
+[2025-03-28 15:55:18] Cart cleared
+[2025-03-28 15:55:22] POST Data: Array
+(
+    [shipping_address_id] => 1
+    [new_full_name] => 
+    [new_street_address] => 
+    [new_city] => 
+    [new_state] => 
+    [new_postal_code] => 
+    [new_country] => 
+    [new_phone] => 
+    [payment_method] => credit_card
+)
+
+[2025-03-28 15:55:22] Cart Items: Array
+(
+)
+
+[2025-03-28 15:55:22] Cart is empty
+[2025-03-28 15:55:35] POST Data: Array
+(
+    [shipping_address_id] => 1
+    [new_full_name] => 
+    [new_street_address] => 
+    [new_city] => 
+    [new_state] => 
+    [new_postal_code] => 
+    [new_country] => 
+    [new_phone] => 
+    [payment_method] => credit_card
+)
+
+[2025-03-28 15:55:35] Cart Items: Array
+(
+    [0] => Array
+        (
+            [cart_id] => 24
+            [product_id] => 5
+            [price] => 213.00
+            [quantity] => 1
+            [product_colorway_id] => 15
+        )
+
+)
+
+[2025-03-28 15:55:35] Subtotal: 213, Shipping: 500, Tax: 10.65, Total: 723.65
+[2025-03-28 15:55:35] Order created with ID: 6
+[2025-03-28 15:55:35] Order items inserted
+[2025-03-28 15:55:35] Cart cleared
+[2025-03-28 15:58:48] POST Data: Array
+(
+    [shipping_address_id] => 1
+    [new_full_name] => 
+    [new_street_address] => 
+    [new_city] => 
+    [new_state] => 
+    [new_postal_code] => 
+    [new_country] => 
+    [new_phone] => 
+    [payment_method] => credit_card
+)
+
+[2025-03-28 15:58:48] Cart Items: Array
+(
+    [0] => Array
+        (
+            [cart_id] => 25
+            [product_id] => 6
+            [price] => 123.00
+            [quantity] => 1
+            [product_colorway_id] => 13
+        )
+
+)
+
+[2025-03-28 15:58:48] Subtotal: 123, Shipping: 500, Tax: 6.15, Total: 629.15
+[2025-03-28 15:58:48] Order created with ID: 7
+[2025-03-28 15:58:48] Order items inserted
+[2025-03-28 15:58:48] Cart cleared
+[2025-03-28 15:59:09] POST Data: Array
+(
+    [shipping_address_id] => 1
+    [new_full_name] => 
+    [new_street_address] => 
+    [new_city] => 
+    [new_state] => 
+    [new_postal_code] => 
+    [new_country] => 
+    [new_phone] => 
+    [payment_method] => credit_card
+)
+
+[2025-03-28 15:59:09] Cart Items: Array
+(
+    [0] => Array
+        (
+            [cart_id] => 26
+            [product_id] => 6
+            [price] => 123.00
+            [quantity] => 1
+            [product_colorway_id] => 13
+        )
+
+)
+
+[2025-03-28 15:59:09] Subtotal: 123, Shipping: 500, Tax: 6.15, Total: 629.15
+[2025-03-28 15:59:09] Order created with ID: 8
+[2025-03-28 15:59:09] Order items inserted
+[2025-03-28 15:59:09] Cart cleared
+[2025-03-28 15:59:53] POST Data: Array
+(
+    [shipping_address_id] => 1
+    [new_full_name] => 
+    [new_street_address] => 
+    [new_city] => 
+    [new_state] => 
+    [new_postal_code] => 
+    [new_country] => 
+    [new_phone] => 
+    [payment_method] => paypal
+)
+
+[2025-03-28 15:59:53] Cart Items: Array
+(
+    [0] => Array
+        (
+            [cart_id] => 27
+            [product_id] => 5
+            [price] => 213.00
+            [quantity] => 1
+            [product_colorway_id] => 15
+        )
+
+)
+
+[2025-03-28 15:59:53] Subtotal: 213, Shipping: 500, Tax: 10.65, Total: 723.65
+[2025-03-28 15:59:53] Order created with ID: 9
+[2025-03-28 15:59:53] Order items inserted
+[2025-03-28 15:59:53] Cart cleared
+[2025-03-28 16:00:21] POST Data: Array
+(
+    [shipping_address_id] => 1
+    [new_full_name] => 
+    [new_street_address] => 
+    [new_city] => 
+    [new_state] => 
+    [new_postal_code] => 
+    [new_country] => 
+    [new_phone] => 
+    [payment_method] => paypal
+)
+
+[2025-03-28 16:00:21] Cart Items: Array
+(
+)
+
+[2025-03-28 16:00:21] Cart is empty
+[2025-03-28 16:01:12] POST Data: Array
+(
+    [shipping_address_id] => 1
+    [new_full_name] => 
+    [new_street_address] => 
+    [new_city] => 
+    [new_state] => 
+    [new_postal_code] => 
+    [new_country] => 
+    [new_phone] => 
+    [payment_method] => bank_transfer
+)
+
+[2025-03-28 16:01:12] Cart Items: Array
+(
+    [0] => Array
+        (
+            [cart_id] => 29
+            [product_id] => 6
+            [price] => 123.00
+            [quantity] => 1
+            [product_colorway_id] => 13
+        )
+
+)
+
+[2025-03-28 16:01:12] Subtotal: 123, Shipping: 500, Tax: 6.15, Total: 629.15
+[2025-03-28 16:01:12] Order created with ID: 10
+[2025-03-28 16:01:12] Order items inserted
+[2025-03-28 16:01:12] Cart cleared
+[2025-03-28 16:01:53] POST Data: Array
+(
+    [shipping_address_id] => 1
+    [new_full_name] => 
+    [new_street_address] => 
+    [new_city] => 
+    [new_state] => 
+    [new_postal_code] => 
+    [new_country] => 
+    [new_phone] => 
+    [payment_method] => credit_card
+)
+
+[2025-03-28 16:01:53] Cart Items: Array
+(
+    [0] => Array
+        (
+            [cart_id] => 30
+            [product_id] => 6
+            [price] => 123.00
+            [quantity] => 1
+            [product_colorway_id] => 13
+        )
+
+)
+
+[2025-03-28 16:01:53] Subtotal: 123, Shipping: 500, Tax: 6.15, Total: 629.15
+[2025-03-28 16:01:53] Order created with ID: 11
+[2025-03-28 16:01:53] Order items inserted
+[2025-03-28 16:01:53] Cart cleared
+[2025-03-28 16:04:23] POST Data: Array
+(
+    [shipping_address_id] => 1
+    [new_full_name] => 
+    [new_street_address] => 
+    [new_city] => 
+    [new_state] => 
+    [new_postal_code] => 
+    [new_country] => 
+    [new_phone] => 
+    [payment_method] => paypal
+)
+
+[2025-03-28 16:04:23] Cart Items: Array
+(
+    [0] => Array
+        (
+            [cart_id] => 31
+            [product_id] => 6
+            [price] => 123.00
+            [quantity] => 1
+            [product_colorway_id] => 13
+        )
+
+)
+
+[2025-03-28 16:04:23] Subtotal: 123, Shipping: 500, Tax: 6.15, Total: 629.15
+[2025-03-28 16:04:23] Order created with ID: 12
+[2025-03-28 16:04:23] Order items inserted
+[2025-03-28 16:04:23] Cart cleared
