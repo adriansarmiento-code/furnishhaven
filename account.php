@@ -39,7 +39,6 @@ $addresses_query = "
     WHERE 
         user_id = ?
     ORDER BY 
-        is_default DESC, 
         created_at DESC
 ";
 
@@ -95,6 +94,9 @@ try {
             --light: #f8f8f8;
             --dark: #333;
             --text: #555;
+            --primary-bg: #f4f6f9;
+            --card-bg: white;
+            --text-dark: #2c3e50;
         }
 
         
@@ -300,11 +302,11 @@ try {
             font-size: 0.8em;
             text-transform: uppercase;
         }
-
-        .order-status.processing { background-color: #f0ad4e; color: white; }
+        .order-status.pending { background-color: #ffc107; color: white; }
+        .order-status.processing { background-color:#28a745; color: white; }
         .order-status.shipped { background-color: #5bc0de; color: white; }
-        .order-status.delivered { background-color: #5cb85c; color: white; }
-        .order-status.cancelled { background-color: #d9534f; color: white; }
+        .order-status.delivered { background-color: #007bff; color: white; }
+        .order-status.cancelled { background-color: #dc3545; color: white; }
 
         .order-details {
             margin-bottom: 15px;
@@ -354,6 +356,91 @@ try {
         .profile-details p {
             margin-bottom: 10px;
         }
+        .addresses-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 20px;
+    margin-top: 20px;
+}
+
+.address-card {
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.address-card.default {
+    border: 2px solid var(--primary);
+    background-color: rgba(139, 69, 19, 0.05);
+}
+
+.default-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: var(--primary);
+    color: white;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-size: 0.8rem;
+}
+
+.address-card h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: var(--primary);
+}
+
+.address-actions {
+    margin-top: 15px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-sm {
+    background-color: var(--primary);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 3px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+}
+
+.btn-sm i {
+    margin-right: 5px;
+}
+
+.btn-sm:hover {
+    opacity: 0.9;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mt-3 {
+    margin-top: 20px;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 4px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    font-weight: bold;
+}
+
+.btn-primary i {
+    margin-right: 5px;
+}
     </style>
 </head>
 <body>
@@ -405,33 +492,49 @@ try {
         </section>
 
         <!-- Addresses Section -->
-        <section id="addresses" class="section">
-            <h2>Your Addresses</h2>
-            <?php if (empty($saved_addresses)): ?>
-                <p>You have not saved any addresses yet.</p>
-            <?php else: ?>
-                <div class="addresses-list">
-                    <?php foreach ($saved_addresses as $address): ?>
-                        <div class="address-card <?php echo $address['is_default'] ? 'default' : ''; ?>">
-                            <h3><?php echo htmlspecialchars($address['full_name']); ?></h3>
-                            <p>
-                                <?php echo htmlspecialchars($address['street_address']); ?><br>
-                                <?php echo htmlspecialchars($address['city']); ?>, 
-                                <?php echo htmlspecialchars($address['state']); ?> 
-                                <?php echo htmlspecialchars($address['postal_code']); ?><br>
-                                <?php echo htmlspecialchars($address['country']); ?>
-                            </p>
-                            <?php if (!empty($address['phone_number'])): ?>
-                                <p><strong>Phone:</strong> <?php echo htmlspecialchars($address['phone_number']); ?></p>
-                            <?php endif; ?>
-                        </div>
-                    <?php endforeach; ?>
+        <!-- This is the updated addresses section for account.php -->
+            <section id="addresses" class="section">
+                <h2>Your Addresses</h2>
+                <?php if (empty($saved_addresses)): ?>
+                    <p>You have not saved any addresses yet.</p>
                     <div class="text-center mt-3">
-                        <a href="add_address.php" class="btn">Add New Address</a>
+                        <a href="add_address.php" class="btn btn-primary">
+                            <i class="fas fa-plus"></i> Add New Address
+                        </a>
                     </div>
-                </div>
-            <?php endif; ?>
-        </section>
+                <?php else: ?>
+                    <div class="addresses-list">
+                        <?php foreach ($saved_addresses as $address): ?>
+                            <div class="address-card">
+
+                                <h3><?php echo htmlspecialchars($address['full_name']); ?></h3>
+                                <p>
+                                    <?php echo htmlspecialchars($address['street_address']); ?><br>
+                                    <?php echo htmlspecialchars($address['city']); ?>, 
+                                    <?php echo htmlspecialchars($address['state']); ?> 
+                                    <?php echo htmlspecialchars($address['postal_code']); ?><br>
+                                    <?php echo htmlspecialchars($address['country']); ?>
+                                </p>
+                                <?php if (!empty($address['phone_number'])): ?>
+                                    <p><strong>Phone:</strong> <?php echo htmlspecialchars($address['phone_number']); ?></p>
+                                <?php endif; ?>
+                                
+                                <div class="address-actions">
+                                    <a href="edit_address.php?id=<?php echo $address['id']; ?>" class="btn-sm">
+                                        <i class="fas fa-edit"></i> Edit
+                                    </a>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                        
+                        <div class="text-center mt-3">
+                            <a href="add_address.php" class="btn btn-primary">
+                                <i class="fas fa-plus"></i> Add New Address
+                            </a>
+                        </div>
+                    </div>
+                <?php endif; ?>
+            </section>
 
         <!-- Orders Section -->
         <section id="orders" class="section">
@@ -440,6 +543,11 @@ try {
                 <p class="error"><?php echo htmlspecialchars($orders_error); ?></p>
             <?php elseif (empty($recent_orders)): ?>
                 <p>You have not placed any orders yet.</p>
+                <div class="text-center mt-3">
+            <a href="home.php#categories" class="btn btn-primary">
+                <i class="fas fa-shopping-cart"></i> Shop Now
+            </a>
+        </div>
             <?php else: ?>
                 <div class="orders-list">
                     <?php foreach ($recent_orders as $order): ?>
@@ -458,7 +566,7 @@ try {
                                 </p>
                                 <p>
                                     <strong>Total Amount:</strong> 
-                                    $<?php echo number_format($order['total_amount'], 2); ?>
+                                    ₱<?php echo number_format($order['total_amount'], 2); ?>
                                 </p>
                             </div>
 
@@ -475,13 +583,6 @@ try {
                     </div>
                 </div>
             <?php endif; ?>
-        </section>
-
-        <!-- Addresses Section -->
-        <section id="addresses" class="section">
-            <h2>Your Addresses</h2>
-            <p>Manage your saved addresses here.</p>
-            <!-- Add address management functionality here -->
         </section>
 
         
@@ -525,51 +626,52 @@ try {
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Section toggle functionality
-            const sectionToggles = document.querySelectorAll('.section-toggle, .account-card');
-            const sections = document.querySelectorAll('.section');
+    // Create the profile card first
+    const profileCard = document.createElement('div');
+    profileCard.className = 'account-card';
+    profileCard.setAttribute('data-section', 'profile');
+    profileCard.innerHTML = `
+        <i class="fas fa-user fa-3x" style="color: var(--primary); margin-bottom: 15px;"></i>
+        <h3>Profile</h3>
+        <p>View and manage your account details.</p>
+        <a href="#" class="btn section-toggle">View Profile</a>
+    `;
 
-            sectionToggles.forEach(toggle => {
-                toggle.addEventListener('click', function(event) {
-                    event.preventDefault();
-                    
-                    // Remove active class from all sections
-                    sections.forEach(section => {
-                        section.classList.remove('active');
-                    });
+    // Insert the profile card before the first account card
+    const accountSections = document.querySelector('.account-sections');
+    const firstCard = accountSections.firstElementChild;
+    accountSections.insertBefore(profileCard, firstCard);
+    
+    // THEN set up the section toggle functionality
+    const sectionToggles = document.querySelectorAll('.section-toggle, .account-card');
+    const sections = document.querySelectorAll('.section');
 
-                    // Get the target section
-                    const targetSectionId = this.getAttribute('data-section') || 
-                        this.getAttribute('href')?.substring(1);
-                    
-                    if (targetSectionId) {
-                        const targetSection = document.getElementById(targetSectionId);
-                        if (targetSection) {
-                            targetSection.classList.add('active');
-                        }
-                    }
-                });
+    sectionToggles.forEach(toggle => {
+        toggle.addEventListener('click', function(event) {
+            event.preventDefault();
+            
+            // Remove active class from all sections
+            sections.forEach(section => {
+                section.classList.remove('active');
             });
 
-            // Add a new account card for Profile
-            const profileCard = document.createElement('div');
-            profileCard.className = 'account-card';
-            profileCard.setAttribute('data-section', 'profile');
-            profileCard.innerHTML = `
-                <i class="fas fa-user fa-3x" style="color: var(--primary); margin-bottom: 15px;"></i>
-                <h3>Profile</h3>
-                <p>View and manage your account details.</p>
-                <a href="#" class="btn section-toggle">View Profile</a>
-            `;
-
-            // Insert the profile card before the first account card
-            const accountSections = document.querySelector('.account-sections');
-            const firstCard = accountSections.firstElementChild;
-            accountSections.insertBefore(profileCard, firstCard);
-
-            // Default to showing orders section
-            document.getElementById('orders').classList.add('active');
+            // Get the target section
+            const targetSectionId = this.closest('.account-card').getAttribute('data-section') || 
+                this.getAttribute('data-section') ||
+                this.getAttribute('href')?.substring(1);
+            
+            if (targetSectionId) {
+                const targetSection = document.getElementById(targetSectionId);
+                if (targetSection) {
+                    targetSection.classList.add('active');
+                }
+            }
         });
+    });
+
+    // Default to showing profile section (or any other section you prefer)
+    document.getElementById('profile').classList.add('active');
+});
     </script>
 </body>
 </html>
