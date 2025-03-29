@@ -1,8 +1,8 @@
 <?php
 $host = 'localhost';     // Usually 'localhost' for XAMPP
 $dbname = 'furn_db';
-$username = 'furnishhaven';      // Default XAMPP MySQL username
-$password = 'furnishhaven';          // Default XAMPP MySQL password (empty)
+$username = 'root';      // Default XAMPP MySQL username
+$password = '';          // Default XAMPP MySQL password (empty)
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
