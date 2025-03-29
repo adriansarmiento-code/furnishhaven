@@ -249,22 +249,19 @@
     </style>
 </head>
 <body>
-    <div class="account-right">
+<header class="header">
+        <i class="fas fa-headset"></i> About Us
+    </header>
+    
+    <nav class="nav">
+        <a href="home.php"><i class="fas fa-home"></i> Home</a>
+        <a href="living_room.php"><i class="fas fa-couch"></i> Products</a>
         <a href="account.php"><i class="fas fa-user"></i> Account</a>
-        <a href="cart.php"><i class="fas fa-shopping-cart"></i> Cart</a>
-        <a href="login.php"><i class="fas fa-sign-out-alt"></i> Logout</a>
-    </div>
-
-    <div class="header">About Us</div>
-    <div class="nav">
-        <a href="living_room.php">Living Room</a>
-        <a href="bedroom.php">Bedroom</a>
-        <a href="dining_room.php">Dining Room</a>
-    </div>
+    </nav>
 
     <!-- Hero Image Section -->
     <div class="hero-container">
-        <img src="img/about.avif" alt="Homify Team" class="hero-image">
+        <img src="img/about.avif" alt="Furnish Haven Team" class="hero-image">
         <div class="hero-overlay">
             <div class="hero-text">
                 <h1>Our Story</h1>
@@ -276,9 +273,9 @@
     <div class="container">
         <div class="section">
             <h2>Our Beginning</h2>
-            <p>Homify was founded in 2010 with a simple mission: to make beautiful, high-quality furniture accessible to every Filipino home. What started as a small workshop in Quezon City has grown into one of the country's most trusted home furnishing brands.</p>
+            <p>Furnish Haven was founded in 2010 with a simple mission: to make beautiful, high-quality furniture accessible to every Filipino home. What started as a small workshop in Quezon City has grown into one of the country's most trusted home furnishing brands.</p>
             
-            <p>Our founder, Maria Santos, began by crafting custom furniture pieces for friends and family. Word quickly spread about the exceptional quality and craftsmanship, and soon Homify was serving customers across Luzon. Today, we deliver to all regions of the Philippines, with showrooms in Manila, Cebu, and Davao.</p>
+            <p>Our founder, Maria Santos, began by crafting custom furniture pieces for friends and family. Word quickly spread about the exceptional quality and craftsmanship, and soon Furnish Haven was serving customers across Luzon. Today, we deliver to all regions of the Philippines, with showrooms in Manila, Cebu, and Davao.</p>
             
             <div class="mission-statement">
                 "We believe every Filipino deserves a home that's both beautiful and functional - a space that reflects their personality and meets their family's needs."
@@ -287,7 +284,7 @@
         
         <div class="section">
             <h2>Our Mission</h2>
-            <p>At Homify, we're committed to:</p>
+            <p>At Furnish Haven, we're committed to:</p>
             
             <div class="values-list">
                 <div class="value-item">
@@ -308,29 +305,28 @@
                 </div>
             </div>
         </div>
-    
         <div class="section">
-            <h2>Our Promise</h2>
-            <p>When you shop with Homify, you're not just buying furniture - you're investing in:</p>
-            <ul style="list-style-type: none; padding: 0; max-width: 800px; margin: 0 auto;">
-                <li style="padding: 10px 0; border-bottom: 1px solid #eee; display: flex; align-items: center;">
-                    <span style="color: #4B5945; font-weight: bold; margin-right: 10px;">✓</span>
-                    <span>100% satisfaction guarantee on all products</span>
-                </li>
-                <li style="padding: 10px 0; border-bottom: 1px solid #eee; display: flex; align-items: center;">
-                    <span style="color: #4B5945; font-weight: bold; margin-right: 10px;">✓</span>
-                    <span>Free nationwide delivery on orders over ₱5,000</span>
-                </li>
-                <li style="padding: 10px 0; border-bottom: 1px solid #eee; display: flex; align-items: center;">
-                    <span style="color: #4B5945; font-weight: bold; margin-right: 10px;">✓</span>
-                    <span>5-year warranty on all furniture frames</span>
-                </li>
-                <li style="padding: 10px 0; display: flex; align-items: center;">
-                    <span style="color: #4B5945; font-weight: bold; margin-right: 10px;">✓</span>
-                    <span>Dedicated customer support team available 7 days a week</span>
-                </li>
-            </ul>
-        </div>
+    <h2>Our Promise</h2>
+    <p>When you shop with Furnish Haven, you're not just buying furniture - you're investing in:</p>
+    <ul style="list-style-type: none; padding: 0; max-width: 800px; margin: 0 auto;">
+        <li style="padding: 10px 0; border-bottom: 1px solid #eee; display: flex; align-items: center;">
+            <span style="color: #4B5945; font-weight: bold; margin-right: 10px;">✓</span>
+            <span>100% satisfaction guarantee on all products</span>
+        </li>
+        <li style="padding: 10px 0; border-bottom: 1px solid #eee; display: flex; align-items: center;">
+            <span style="color: #4B5945; font-weight: bold; margin-right: 10px;">✓</span>
+            <span>Affordable ₱500 flat-rate shipping nationwide</span>
+        </li>
+        <li style="padding: 10px 0; border-bottom: 1px solid #eee; display: flex; align-items: center;">
+            <span style="color: #4B5945; font-weight: bold; margin-right: 10px;">✓</span>
+            <span>5-year warranty on all furniture frames</span>
+        </li>
+        <li style="padding: 10px 0; display: flex; align-items: center;">
+            <span style="color: #4B5945; font-weight: bold; margin-right: 10px;">✓</span>
+            <span>Dedicated customer support team available 7 days a week</span>
+        </li>
+    </ul>
+</div>
     </div>
 
     <!-- Footer Section with Working Links -->
@@ -362,8 +358,8 @@
             <ul>
                 <li><a href="about.php">About Us</a></li>
                 <li><a href="contact.php">Contact Us</a></li>
-                <li><a href="mailto:support@homify.com">support@furnish_haven.com</a></li>
-                <li><a href="mailto:business@homify.com">business@furnish_haven.com</a></li>
+                <li><a href="mailto:support@Furnish Haven.com">support@furnish_haven.com</a></li>
+                <li><a href="mailto:business@Furnish Haven.com">business@furnish_haven.com</a></li>
                 <li><a href="tel:04599999999">(045) 9999-9999</a></li>
             </ul>
         </div>
